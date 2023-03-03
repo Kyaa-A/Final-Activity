@@ -8,6 +8,7 @@ public class Anagram {
         boolean valid = true;
         do {
             try {
+                System.out.println("--------[ Sample Input ]--------\n");
                 System.out.print("Enter any number/word:\t");
                 String input1 = scan.nextLine().replaceAll("[-., ]", "");
                 System.out.print("Enter any number/word:\t");
@@ -24,6 +25,7 @@ public class Anagram {
 
                 boolean output = Arrays.equals(container1, container2);
 
+                System.out.println("\n--------[ Sample Output ]--------\n");
                 if (container1.length == container2.length) {
                     if (output) {
                         System.out.println(input1 + " and " + input2 + " are Anagrams");
