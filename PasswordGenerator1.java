@@ -11,7 +11,7 @@ public class PasswordGenerator1 {
         try {
             System.out.print("[x] Here is your password :\t");
             for (int i = 0; i < password.length; i++) {
-                password[i] = character.ch rAt(rand.nextInt(character.length()));
+                password[i] = character.charAt(rand.nextInt(character.length()));
             }
             System.out.println(password);
         } catch (Exception e) {
