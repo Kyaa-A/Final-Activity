@@ -3,26 +3,45 @@ import java.util.Scanner;
 public class MorseCode {
     public static void main(String[] args) {
 
-        String alphabet[] = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
-                "s", "t", "u", "v", "w", "x", "y", "z" };
-
-        String morseCode[] = { "*-", "-***", "-*-*", "-**", "*", "**-*", "--*", "****", "**", "*---", "-*-", "*-**",
-                "--", "-*", "---", "*--*", "--*-", "*-*", "***", "-", "**-", "***-", "*--", "-**-", "-*--", "--**" };
-
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Type your word here separated by -dash:\t");
-        String input = scan.nextLine().toLowerCase();
+        String word = "";
+        String translate = "";
+        boolean valid = false;
 
-        String inputSplit[] = input.split("-");
-        
-        for (int i = 0; i < inputSplit.length; i++) {
-            for (int j = 0; j < alphabet.length; j++) {
-                if(inputSplit[i].equals(alphabet[i])){
-                    
+        String letter[] = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+                "s", "t", "u", "v", "w", "x", "y", "z" };
+
+        String code[] = { "*-", "-***", "-*-*", "-**", "*", "**-*", "--*", "****", "**", "*---", "-*-", "*-**",
+                "--", "-*", "---", "*--*", "--*-", "*-*", "***", "-", "**-", "***-", "*--", "-**-", "-*--", "--**" };
+
+        System.out.println("-".repeat(25) + "[ Input ]" + "-".repeat(25));
+        do {
+            valid = true;
+            try {
+                System.out.print("\nType your word here separated by - dash: ");
+                word = scan.next().toLowerCase();
+                String wordSplit[] = word.split("-");
+
+                for (int i = 0; i < wordSplit.length; i++) {
+                    for (int j = 0; j < letter.length; j++) {
+                        if (wordSplit[i].equals(letter[j])) {
+                            translate += code[j] + "|";
+                            valid = false;
+                        }
+                    }
                 }
+                if (valid) {
+                    System.out.println("Invalid Input");
+                    valid = true;
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid Input!");
+                valid = true;
             }
-        }
 
+        } while (valid);
+        System.out.println("\n" + "-".repeat(25) + "[ Output ]" + "-".repeat(24));
+        System.out.println("\n" + translate);
     }
 }
