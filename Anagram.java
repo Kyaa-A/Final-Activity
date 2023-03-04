@@ -14,9 +14,9 @@ public class Anagram {
             try {
                 System.out.println("--------[ Sample Input ]--------\n");
                 System.out.print("Enter any number/word:\t");
-                input1 = scan.nextLine().replaceAll("[-., ]", "");
+                input1 = scan.nextLine().replaceAll("[\\s+ \\W+]", "");
                 System.out.print("Enter any number/word:\t");
-                input2 = scan.nextLine().replaceAll("[-., ]", "");
+                input2 = scan.nextLine().replaceAll("[\\s+ \\W+]", "");
 
                 String firstInput = input1.toLowerCase();
                 String secondInput = input2.toLowerCase();
