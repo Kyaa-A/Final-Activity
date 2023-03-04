@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MorseCode {
+public class test {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -23,10 +23,13 @@ public class MorseCode {
                 word = scan.next().toLowerCase();
                 String wordSplit[] = word.split("-");
 
+                String sep = "";
                 for (int i = 0; i < wordSplit.length; i++) {
                     for (int j = 0; j < letter.length; j++) {
                         if (wordSplit[i].equals(letter[j])) {
-                            translate += code[j] + "|";
+                            translate += code[j];
+                            sep += translate;
+                            sep = "|";
                             valid = false;
                         }
                     }
@@ -42,6 +45,8 @@ public class MorseCode {
 
         } while (valid);
         System.out.println("\n" + "-".repeat(25) + "[ Output ]" + "-".repeat(24));
-        System.out.println("\n" + translate);
+
+        System.out.print(translate);
+
     }
 }
