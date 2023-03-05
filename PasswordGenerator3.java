@@ -8,7 +8,7 @@ public class PasswordGenerator3 {
         Scanner scan = new Scanner(System.in);
 
         String character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        boolean reset = false;
+        boolean valid = false;
 
         System.out.println("[!] Your password must have at least 5 characters.");
         do {
@@ -28,13 +28,13 @@ public class PasswordGenerator3 {
                     return;
                 } else {
                     System.out.println("[!] Invalid length! must have atleast 5 characters.");
-                    reset = true;
+                    valid = true;
                 }
             } catch (Exception e) {
                 System.out.println("[!] Invalid! Input must be integer >:( ");
-                reset = true;
+                valid = true;
                 scan.nextLine();
             }
-        } while (reset);
+        } while (valid);
     }
 }

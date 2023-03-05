@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.util.Random;
 
-public class Rock_Paper_Scissors {
+public class Bato2PickPart2 {
 
     static String playerChoice = " ";
     static String computerChoice = "";
@@ -12,7 +12,7 @@ public class Rock_Paper_Scissors {
     static boolean gameEnds = false;
 
     public static void main(String[] args) throws InterruptedException {
-
+        
         Scanner scan = new Scanner(System.in);
         Random rand = new Random();
 
@@ -87,12 +87,12 @@ public class Rock_Paper_Scissors {
         String finalMessage = "";
 
         if ((playerChoice.equals("Rock") && computerChoice.equals("Scissors")) ||
-            (playerChoice.equals("Paper") && computerChoice.equals("Rock")) ||
-            (playerChoice.equals("Scissors") && computerChoice.equals("Paper"))) {
+                (playerChoice.equals("Paper") && computerChoice.equals("Rock")) ||
+                (playerChoice.equals("Scissors") && computerChoice.equals("Paper"))) {
             finalMessage = "-------------Player Scored-------------";
             playerPoints++;
         }
-        
+
         if ((computerChoice.equals("Rock") && playerChoice.equals("Scissors")) ||
                 (computerChoice.equals("Paper") && playerChoice.equals("Rock")) ||
                 (computerChoice.equals("Scissors") && playerChoice.equals("Paper"))) {
