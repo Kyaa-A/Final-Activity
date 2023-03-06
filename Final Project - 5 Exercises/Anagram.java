@@ -33,9 +33,7 @@ public class Anagram {
                     System.out.println("20 characters are only allowed, Please Try Again...\n");
                     valid = true;
                 }
-                if (container1.length == container2.length) {
-                    valid = false;
-                }
+                valid = false;
             } catch (Exception e) {
                 System.out.println("Invalid");
                 valid = true;
@@ -45,7 +43,7 @@ public class Anagram {
         System.out.println("\n--------[ Sample Output ]--------\n");
         if (output) {
             System.out.println(input1 + " and " + input2 + " are Anagrams");
-        } else {
+        } else if(!output){
             System.out.println(input1 + " and " + input2 + " are NOT Anagrams");
         }
     }

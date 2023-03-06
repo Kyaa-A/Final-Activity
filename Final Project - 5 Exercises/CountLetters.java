@@ -8,7 +8,7 @@ public class CountLetters {
         int consonant = 0;
 
         try {
-            System.out.print("Enter a text: ");
+            System.out.print("[!] Enter a text: ");
             String input = scan.nextLine().toLowerCase().replaceAll("[\\s+ \\W+]", "");
 
             for (int i = 0; i < input.length(); i++) {
@@ -20,7 +20,7 @@ public class CountLetters {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Invalid, Please Try Again...");
+            System.out.println("[!] Invalid, Please Try Again...");
         }
         System.out.println(vowel + " vowels and " + consonant + " consonants");
     }

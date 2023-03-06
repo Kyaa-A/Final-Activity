@@ -9,8 +9,8 @@ public class CountMeIn {
     ArrayList<Character> charList = new ArrayList<>();
     ArrayList<Integer> countList = new ArrayList<>();
 
-    System.out.print("Sample Input: ");
-    String input = scan.nextLine().toLowerCase();
+    System.out.print("[!] Sample Input: ");
+    String input = scan.nextLine().toLowerCase().replaceAll("[\\s+ \\W+]", "");
 
     for (int i = 0; i < input.length(); i++) {
       char c = input.charAt(i);
@@ -24,8 +24,7 @@ public class CountMeIn {
       }
     }
 
-    System.out.println(charList);
-    System.out.println(countList);
+    System.out.println("\n=====" + charList + "=====\n=====" + countList + "=====\n");
 
     int maxIndex = 0;
     for (int i = 1; i < countList.size(); i++) {
@@ -37,6 +36,6 @@ public class CountMeIn {
     char maxChar = charList.get(maxIndex);
 
     String maxCharString = Character.toString(maxChar);
-    System.out.println("Sample output: " + maxCharString);
+    System.out.println("[1] Sample output: " + maxCharString);
   }
 }
